@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name modular_matrix_rev10-rescue)(type Legacy)(uri ${KIPRJMOD}/modular_matrix_rev10-rescue.lib)(options "")(descr ""))
+  (lib (name nicos-parts)(type Legacy)(uri /home/jeez/Documents/kicad/LIBS/nicos-parts.lib)(options "")(descr ""))
+)

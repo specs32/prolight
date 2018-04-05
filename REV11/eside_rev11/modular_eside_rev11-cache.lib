@@ -1,0 +1,705 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#
+# 25LC_EEPROM
+#
+DEF 25LC_EEPROM U 0 40 Y Y 1 F N
+F0 "U" -300 250 50 H V L CNN
+F1 "25LC_EEPROM" 50 250 50 H V L CNN
+F2 "" -350 -50 50 H I C CNN
+F3 "" -350 -50 50 H I C CNN
+ALIAS AT25_EEPROM BR25S_EEPROM CAT250_EEPROM
+DRAW
+S -300 200 300 -200 0 1 10 f
+X ~CS 1 -400 -100 100 R 50 50 1 1 I
+X MISO 2 400 -100 100 L 50 50 1 1 I
+X ~WP 3 -400 100 100 R 50 50 1 1 I
+X GND 4 0 -300 100 U 50 50 1 1 W
+X MOSI 5 400 0 100 L 50 50 1 1 I
+X SCK 6 400 100 100 L 50 50 1 1 I
+X ~HOLD 7 -400 0 100 R 50 50 1 1 I
+X Vcc 8 0 300 100 D 50 50 1 1 W
+ENDDRAW
+ENDDEF
+#
+# ATMEGA32U4-RC-MU
+#
+DEF ATMEGA32U4-RC-MU U 0 40 Y Y 1 F N
+F0 "U" -950 1700 50 H V C CNN
+F1 "ATMEGA32U4-RC-MU" 700 -1500 50 H V C CNN
+F2 "QFN44" 0 0 50 H I C CIN
+F3 "" 1100 1100 50 H I C CNN
+ALIAS ATMEGA32U4RC-MU
+$FPLIST
+ QFN44
+$ENDFPLIST
+DRAW
+S -1000 1650 950 -1450 0 1 10 f
+X (INT6/AIN0)PE6 1 1100 -650 150 L 40 40 1 1 B
+X UVCC 2 -450 1800 150 D 40 40 1 1 W
+X D- 3 -1150 100 150 R 40 40 1 1 B
+X D+ 4 -1150 200 150 R 40 40 1 1 B
+X UGND 5 -400 -1600 150 U 40 40 1 1 P
+X UCAP 6 -1150 -50 150 R 40 40 1 1 P
+X VBUS 7 -1150 350 150 R 40 40 1 1 P
+X (SS/PCINT0)PB0 8 1100 1550 150 L 40 40 1 1 B
+X (SCLK/PCINT1)PB1 9 1100 1450 150 L 40 40 1 1 B
+X (PDI/MOSI/PCINT2)PB2 10 1100 1350 150 L 40 40 1 1 B
+X (RXD/INT2)PD2 20 1100 150 150 L 40 40 1 1 B
+X (ADC13/OC1B/OC4B/PCINT13)PB6 30 1100 950 150 L 40 40 1 1 B
+X (ADC1)PF1 40 1100 -950 150 L 40 40 1 1 B
+X (PDO/MISO/PCINT3)PB3 11 1100 1250 150 L 40 40 1 1 B
+X (TXD/INT3)PD3 21 1100 50 150 L 40 40 1 1 B
+X (OC3A/~OC4A~)PC6 31 1100 650 150 L 40 40 1 1 B
+X (ADC0)PF0 41 1100 -850 150 L 40 40 1 1 B
+X (OC0A/OC1C/~RTS~/PCINT7)PB7 12 1100 850 150 L 40 40 1 1 B
+X (XCK1/~CTS~)PD5 22 1100 -150 150 L 40 40 1 1 B
+X (ICP3/CLK0/OC4A)PC7 32 1100 550 150 L 40 40 1 1 B
+X AREF 42 -1150 -850 150 R 40 40 1 1 P
+X ~RESET~ 13 -1150 1550 150 R 40 40 1 1 I
+X GND 23 -50 -1600 150 U 40 40 1 1 W
+X (~HWB~)PE2 33 1100 -550 150 L 40 40 1 1 B
+X GND 43 150 -1600 150 U 40 40 1 1 W
+X VCC 14 -200 1800 150 D 40 40 1 1 W
+X AVCC 24 150 1800 150 D 40 40 1 1 W
+X VCC 34 -100 1800 150 D 40 40 1 1 W
+X AVCC 44 250 1800 150 D 40 40 1 1 W
+X GND 15 -150 -1600 150 U 40 40 1 1 W
+X (ICP2/ADC8)PD4 25 1100 -50 150 L 40 40 1 1 B
+X GND 35 50 -1600 150 U 40 40 1 1 W
+X GND 45 240 -1600 150 U 40 40 1 1 W
+X XTAL2 16 -1150 950 150 R 40 40 1 1 O
+X (T1/~OC4D~/ADC9)PD6 26 1100 -250 150 L 40 40 1 1 B
+X (ADC7/TDI)PF7 36 1100 -1350 150 L 40 40 1 1 B
+X XTAL1 17 -1150 1150 150 R 40 40 1 1 I
+X (T0/OC4D/ADC10)PD7 27 1100 -350 150 L 40 40 1 1 B
+X (ADC6/TDO)PF6 37 1100 -1250 150 L 40 40 1 1 B
+X (OC0B/SCL/INT0)PD0 18 1100 350 150 L 40 40 1 1 B
+X (ADC11/PCINT4)PB4 28 1100 1150 150 L 40 40 1 1 B
+X (ADC5/TMS)PF5 38 1100 -1150 150 L 40 40 1 1 B
+X (SDA/INT1)PD1 19 1100 250 150 L 40 40 1 1 B
+X (ADC12/OC1A/~OC4B~/PCINT12)PB5 29 1100 1050 150 L 40 40 1 1 B
+X (ADC4/TCK)PF4 39 1100 -1050 150 L 40 40 1 1 B
+ENDDRAW
+ENDDEF
+#
+# C_Small
+#
+DEF C_Small C 0 10 N N 1 F N
+F0 "C" 10 70 50 H V L CNN
+F1 "C_Small" 10 -80 50 H V L CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ C_*
+$ENDFPLIST
+DRAW
+P 2 0 1 13 -60 -20 60 -20 N
+P 2 0 1 12 -60 20 60 20 N
+X ~ 1 0 100 80 D 50 50 1 1 P
+X ~ 2 0 -100 80 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# Conn_01x02
+#
+DEF Conn_01x02 J 0 40 Y N 1 F N
+F0 "J" 0 100 50 H V C CNN
+F1 "Conn_01x02" 0 -200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_??x*mm*
+ Connector*:*1x??x*mm*
+ Pin?Header?Straight?1X*
+ Pin?Header?Angled?1X*
+ Socket?Strip?Straight?1X*
+ Socket?Strip?Angled?1X*
+$ENDFPLIST
+DRAW
+S -50 -95 0 -105 1 1 6 N
+S -50 5 0 -5 1 1 6 N
+S -50 50 50 -150 1 1 10 f
+X Pin_1 1 -200 0 150 R 50 50 1 1 P
+X Pin_2 2 -200 -100 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# DMN1004UFDF
+#
+DEF DMN1004UFDF Q 0 0 Y N 1 F N
+F0 "Q" 200 75 50 H V L CNN
+F1 "DMN1004UFDF" 200 0 50 H V L CNN
+F2 "lt_foots:U-DFN2020-6" 200 -75 50 H I L CIN
+F3 "" 0 0 50 H I L CNN
+$FPLIST
+ SOT?23*
+$ENDFPLIST
+DRAW
+C 65 0 111 0 1 10 N
+C 100 -70 11 0 1 0 F
+C 100 70 11 0 1 0 F
+P 2 0 1 0 30 -70 100 -70 N
+P 2 0 1 10 30 -50 30 -90 N
+P 2 0 1 0 30 0 100 0 N
+P 2 0 1 10 30 20 30 -20 N
+P 2 0 1 0 30 70 100 70 N
+P 2 0 1 10 30 90 30 50 N
+P 2 0 1 0 100 -70 100 -100 N
+P 2 0 1 0 100 -70 100 0 N
+P 2 0 1 0 100 100 100 70 N
+P 3 0 1 10 10 75 10 -75 10 -75 N
+P 4 0 1 0 40 0 80 15 80 -15 40 0 F
+P 4 0 1 0 100 -70 130 -70 130 70 100 70 N
+P 4 0 1 0 110 20 115 15 145 15 150 10 N
+P 4 0 1 0 130 15 115 -10 145 -10 130 15 N
+X D 1 100 200 100 D 50 50 1 1 P
+X S 2 100 -200 100 U 50 50 1 1 P
+X G 3 -200 0 210 R 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+# D_TVS
+#
+DEF D_TVS D 0 40 N N 1 F N
+F0 "D" 0 100 50 H V C CNN
+F1 "D_TVS" 0 -100 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ TO-???*
+ *SingleDiode
+ *_Diode_*
+ *SingleDiode*
+ D_*
+$ENDFPLIST
+DRAW
+P 2 0 1 0 50 0 -50 0 N
+P 4 0 1 8 -100 -50 0 0 -100 50 -100 -50 N
+P 4 0 1 8 20 50 0 50 0 -50 -20 -50 N
+P 4 0 1 8 100 50 100 -50 0 0 100 50 N
+X A1 1 -150 0 100 R 50 50 1 1 P
+X A2 2 150 0 100 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# LSM6DS3TR
+#
+DEF LSM6DS3TR U 0 40 Y Y 1 F N
+F0 "U" -250 450 60 H V C CNN
+F1 "LSM6DS3TR" 450 -700 60 H V C CNN
+F2 "digikey-footprints:LGA-14L_2.5x3mm__LSM6DS3" 200 200 60 H I L CNN
+F3 "http://www.st.com/content/ccc/resource/technical/document/datasheet/a3/f5/4f/ae/8e/44/41/d7/DM00133076.pdf/files/DM00133076.pdf/jcr:content/translations/en.DM00133076.pdf" 200 300 60 H I L CNN
+F4 "497-15383-1-ND" 200 400 60 H I L CNN "Digi-Key_PN"
+F5 "LSM6DS3TR" 200 500 60 H I L CNN "MPN"
+F6 "Sensors, Transducers" 200 600 60 H I L CNN "Category"
+F7 "Motion Sensors - IMUs (Inertial Measurement Units)" 200 700 60 H I L CNN "Family"
+F8 "http://www.st.com/content/ccc/resource/technical/document/datasheet/a3/f5/4f/ae/8e/44/41/d7/DM00133076.pdf/files/DM00133076.pdf/jcr:content/translations/en.DM00133076.pdf" 200 800 60 H I L CNN "DK_Datasheet_Link"
+F9 "/product-detail/en/stmicroelectronics/LSM6DS3TR/497-15383-1-ND/5180534" 200 900 60 H I L CNN "DK_Detail_Page"
+F10 "IMU ACCEL/GYRO I2C/SPI 14VFLGA" 200 1000 60 H I L CNN "Description"
+F11 "STMicroelectronics" 200 1100 60 H I L CNN "Manufacturer"
+F12 "Active" 200 1200 60 H I L CNN "Status"
+DRAW
+X SDO/SA0 1 600 300 200 L 50 50 1 0 P
+X SDx 2 600 200 200 L 50 50 1 0 P
+X SCx 3 600 100 200 L 50 50 1 0 P
+X INT1 4 600 0 200 L 50 50 1 0 O
+X VDDIO 5 600 -300 200 L 50 50 1 0 W
+X GND 6 -100 -800 200 U 50 50 1 0 W
+X GND 7 0 -800 200 U 50 50 1 0 W
+X VDD 8 -100 600 200 D 50 50 1 0 W
+X INT2 9 600 -100 200 L 50 50 1 0 O
+X NC 10 600 -400 200 L 50 50 1 0 N
+X NC 11 600 -500 200 L 50 50 1 0 N
+X CS 12 -500 200 200 R 50 50 1 0 I
+X SCL 13 -500 100 200 R 50 50 1 0 I
+X SDA 14 600 -200 200 L 50 50 1 0 B
+S -300 400 400 -600 0 1 0 f
+ENDDRAW
+ENDDEF
+#
+# OLED_0.86_14PIN
+#
+DEF OLED_0.86_14PIN U 0 40 Y Y 1 F N
+F0 "U" 0 650 60 H V C CNN
+F1 "OLED_0.86_14PIN" 0 -690 60 H V C CNN
+F2 "" 0 -350 60 H I C CNN
+F3 "" 0 -350 60 H I C CNN
+DRAW
+S -280 600 360 -600 0 1 0 N
+X VCC 1 -320 -520 200 R 50 50 1 1 I
+X VCOMH 2 -320 -440 200 R 50 50 1 1 I
+X IREF 3 -320 -360 200 R 50 50 1 1 I
+X SDA 4 -320 -280 200 R 50 50 1 1 I
+X SCL 5 -320 -200 200 R 50 50 1 1 I
+X RES# 6 -320 -120 200 R 50 50 1 1 I
+X VDD 7 -320 -40 200 R 50 50 1 1 I
+X VSS 8 -320 40 200 R 50 50 1 1 I
+X VBREF 9 -320 120 200 R 50 50 1 1 I
+X VBAT 10 -320 200 200 R 50 50 1 1 I
+X C1N 11 -320 280 200 R 50 50 1 1 I
+X C1P 12 -320 360 200 R 50 50 1 1 I
+X C2N 13 -320 440 200 R 50 50 1 1 I
+X C2P 14 -320 520 200 R 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+# PWR_FLAG
+#
+DEF PWR_FLAG #FLG 0 0 N N 1 F P
+F0 "#FLG" 0 75 50 H I C CNN
+F1 "PWR_FLAG" 0 150 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+X pwr 1 0 0 0 U 50 50 0 0 w
+P 6 0 1 0 0 0 0 50 -40 75 0 100 40 75 0 50 N
+ENDDRAW
+ENDDEF
+#
+# Polyfuse_Small
+#
+DEF Polyfuse_Small F 0 0 N Y 1 F N
+F0 "F" -75 0 50 V V C CNN
+F1 "Polyfuse_Small" 75 0 50 V V C CNN
+F2 "" 50 -200 50 H I L CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ *polyfuse*
+ *PTC*
+$ENDFPLIST
+DRAW
+S -20 50 20 -50 0 1 0 N
+P 2 0 1 0 0 100 0 -100 N
+P 4 0 1 0 -40 50 -40 30 40 -30 40 -50 N
+X ~ 1 0 100 25 D 50 50 1 1 P
+X ~ 2 0 -100 25 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# R_Small
+#
+DEF R_Small R 0 10 N N 1 F N
+F0 "R" 30 20 50 H V L CNN
+F1 "R_Small" 30 -40 50 H V L CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ R_*
+$ENDFPLIST
+DRAW
+S -30 70 30 -70 0 1 8 N
+X ~ 1 0 100 30 D 50 50 1 1 P
+X ~ 2 0 -100 30 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# VBUS
+#
+DEF VBUS #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 0 -150 50 H I C CNN
+F1 "VBUS" 0 150 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+P 2 0 1 0 -30 50 0 100 N
+P 2 0 1 0 0 0 0 100 N
+P 2 0 1 0 0 100 30 50 N
+X VBUS 1 0 0 0 U 50 50 1 1 W N
+ENDDRAW
+ENDDEF
+#
+# Wippschalter_smd
+#
+DEF Wippschalter_smd SW 0 40 Y Y 1 F N
+F0 "SW" -140 -30 60 H V C CNN
+F1 "Wippschalter_smd" -160 540 60 H V C CNN
+F2 "" 0 0 60 H I C CNN
+F3 "" 0 0 60 H I C CNN
+DRAW
+C -400 100 14 0 1 0 N
+C -400 200 14 0 1 0 N
+C -400 300 14 0 1 0 N
+C -400 400 14 0 1 0 N
+C -200 100 14 0 1 0 N
+S -540 480 230 30 0 1 0 N
+P 2 0 1 0 100 250 -200 100 N
+X up 1 -600 400 200 R 50 50 1 1 I
+X both 2 -600 300 200 R 50 50 1 1 I
+X down 3 -600 200 200 R 50 50 1 1 I
+X NC 4 -600 100 200 R 50 50 1 1 I
+X COM 5 300 250 200 L 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+# modular_eside_rev10-rescue:+3.3V-RESCUE-modular_eside_rev10
+#
+DEF modular_eside_rev10-rescue:+3.3V-RESCUE-modular_eside_rev10 #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 0 -150 50 H I C CNN
+F1 "modular_eside_rev10-rescue:+3.3V-RESCUE-modular_eside_rev10" 0 140 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+P 2 0 1 0 -30 50 0 100 N
+P 2 0 1 0 0 0 0 100 N
+P 2 0 1 0 0 100 30 50 N
+X +3V3 1 0 0 0 U 50 50 1 1 W N
+ENDDRAW
+ENDDEF
+#
+# modular_eside_rev10-rescue:2N7002-RESCUE-modular_eside_rev10
+#
+DEF modular_eside_rev10-rescue:2N7002-RESCUE-modular_eside_rev10 Q 0 0 Y N 1 F N
+F0 "Q" 200 75 50 H V L CNN
+F1 "modular_eside_rev10-rescue:2N7002-RESCUE-modular_eside_rev10" 200 0 50 H V L CNN
+F2 "TO_SOT_Packages_SMD:SOT-23" 200 -75 50 H I L CIN
+F3 "" 0 0 50 H I L CNN
+$FPLIST
+ SOT?23*
+$ENDFPLIST
+DRAW
+C 65 0 111 0 1 10 N
+C 100 -70 11 0 1 0 F
+C 100 70 11 0 1 0 F
+P 2 0 1 0 30 -70 100 -70 N
+P 2 0 1 10 30 -50 30 -90 N
+P 2 0 1 0 30 0 100 0 N
+P 2 0 1 10 30 20 30 -20 N
+P 2 0 1 0 30 70 100 70 N
+P 2 0 1 10 30 90 30 50 N
+P 2 0 1 0 100 -70 100 -100 N
+P 2 0 1 0 100 -70 100 0 N
+P 2 0 1 0 100 100 100 70 N
+P 3 0 1 10 10 75 10 -75 10 -75 N
+P 4 0 1 0 40 0 80 15 80 -15 40 0 F
+P 4 0 1 0 100 -70 130 -70 130 70 100 70 N
+P 4 0 1 0 110 20 115 15 145 15 150 10 N
+P 4 0 1 0 130 15 115 -10 145 -10 130 15 N
+X G 1 -200 0 210 R 50 50 1 1 I
+X S 2 100 -200 100 U 50 50 1 1 P
+X D 3 100 200 100 D 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# modular_eside_rev10-rescue:C-RESCUE-modular_eside_rev10
+#
+DEF modular_eside_rev10-rescue:C-RESCUE-modular_eside_rev10 C 0 10 N Y 1 F N
+F0 "C" 25 100 50 H V L CNN
+F1 "modular_eside_rev10-rescue:C-RESCUE-modular_eside_rev10" 25 -100 50 H V L CNN
+F2 "" 38 -150 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ C_*
+$ENDFPLIST
+DRAW
+P 2 0 1 20 -80 -30 80 -30 N
+P 2 0 1 20 -80 30 80 30 N
+X ~ 1 0 150 110 D 50 50 1 1 P
+X ~ 2 0 -150 110 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# modular_eside_rev10-rescue:Conn_01x06-RESCUE-modular_eside_rev10
+#
+DEF modular_eside_rev10-rescue:Conn_01x06-RESCUE-modular_eside_rev10 J 0 40 Y N 1 F N
+F0 "J" 0 300 50 H V C CNN
+F1 "modular_eside_rev10-rescue:Conn_01x06-RESCUE-modular_eside_rev10" 0 -400 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_??x*mm*
+ Connector*:*1x??x*mm*
+ Pin?Header?Straight?1X*
+ Pin?Header?Angled?1X*
+ Socket?Strip?Straight?1X*
+ Socket?Strip?Angled?1X*
+$ENDFPLIST
+DRAW
+S -50 -295 0 -305 1 1 6 N
+S -50 -195 0 -205 1 1 6 N
+S -50 -95 0 -105 1 1 6 N
+S -50 5 0 -5 1 1 6 N
+S -50 105 0 95 1 1 6 N
+S -50 205 0 195 1 1 6 N
+S -50 250 50 -350 1 1 10 f
+X Pin_1 1 -200 200 150 R 50 50 1 1 P
+X Pin_2 2 -200 100 150 R 50 50 1 1 P
+X Pin_3 3 -200 0 150 R 50 50 1 1 P
+X Pin_4 4 -200 -100 150 R 50 50 1 1 P
+X Pin_5 5 -200 -200 150 R 50 50 1 1 P
+X Pin_6 6 -200 -300 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# modular_eside_rev10-rescue:GND-RESCUE-modular_eside_rev10
+#
+DEF modular_eside_rev10-rescue:GND-RESCUE-modular_eside_rev10 #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 0 -250 50 H I C CNN
+F1 "modular_eside_rev10-rescue:GND-RESCUE-modular_eside_rev10" 0 -150 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+P 6 0 1 0 0 0 0 -50 50 -50 0 -100 -50 -50 0 -50 N
+X GND 1 0 0 0 D 50 50 1 1 W N
+ENDDRAW
+ENDDEF
+#
+# modular_eside_rev10-rescue:L-RESCUE-modular_eside_rev10
+#
+DEF modular_eside_rev10-rescue:L-RESCUE-modular_eside_rev10 L 0 40 N N 1 F N
+F0 "L" -50 0 50 V V C CNN
+F1 "modular_eside_rev10-rescue:L-RESCUE-modular_eside_rev10" 75 0 50 V V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Choke_*
+ *Coil*
+ Inductor_*
+ L_*
+$ENDFPLIST
+DRAW
+A 0 -75 25 -899 899 0 1 0 N 0 -100 0 -50
+A 0 -25 25 -899 899 0 1 0 N 0 -50 0 0
+A 0 25 25 -899 899 0 1 0 N 0 0 0 50
+A 0 75 25 -899 899 0 1 0 N 0 50 0 100
+X 1 1 0 150 50 D 50 50 1 1 P
+X 2 2 0 -150 50 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# modular_eside_rev10-rescue:LED-RESCUE-modular_eside_rev10
+#
+DEF modular_eside_rev10-rescue:LED-RESCUE-modular_eside_rev10 D 0 40 Y N 1 F N
+F0 "D" 0 100 50 H V C CNN
+F1 "modular_eside_rev10-rescue:LED-RESCUE-modular_eside_rev10" 0 -100 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ LED*
+$ENDFPLIST
+DRAW
+P 2 0 1 8 -50 -50 -50 50 N
+P 2 0 1 0 -50 0 50 0 N
+P 4 0 1 8 50 -50 50 50 -50 0 50 -50 N
+P 5 0 1 0 -120 -30 -180 -90 -150 -90 -180 -90 -180 -60 N
+P 5 0 1 0 -70 -30 -130 -90 -100 -90 -130 -90 -130 -60 N
+X K 1 -150 0 100 R 50 50 1 1 P
+X A 2 150 0 100 L 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# modular_eside_rev10-rescue:LIPO_W_NTC-RESCUE-modular_eside_rev10
+#
+DEF modular_eside_rev10-rescue:LIPO_W_NTC-RESCUE-modular_eside_rev10 BAT 0 40 Y Y 1 F N
+F0 "BAT" 0 -100 60 H V C CNN
+F1 "modular_eside_rev10-rescue:LIPO_W_NTC-RESCUE-modular_eside_rev10" 0 450 60 H V C CNN
+F2 "" 0 0 60 H I C CNN
+F3 "" 0 0 60 H I C CNN
+DRAW
+S 0 300 250 0 0 1 0 N
+S 250 300 500 0 0 1 0 N
+P 2 0 1 0 300 125 450 125 N
+P 2 0 1 0 300 225 450 225 N
+P 2 0 1 0 350 75 400 75 N
+P 2 0 1 0 350 175 400 175 N
+P 3 0 1 0 375 75 375 50 225 50 N
+P 3 0 1 0 375 225 375 250 225 250 N
+X 1 1 -100 250 100 R 50 50 1 1 P
+X 2 2 -100 150 100 R 50 50 1 1 P
+X 3 3 -100 50 100 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# modular_eside_rev10-rescue:MIC5205-3.3-RESCUE-modular_eside_rev10
+#
+DEF modular_eside_rev10-rescue:MIC5205-3.3-RESCUE-modular_eside_rev10 U 0 10 Y Y 1 F N
+F0 "U" -150 225 50 H V C CNN
+F1 "modular_eside_rev10-rescue:MIC5205-3.3-RESCUE-modular_eside_rev10" 0 225 50 H V L CNN
+F2 "TO_SOT_Packages_SMD:SOT-23-5" 0 325 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ SOT?23*
+$ENDFPLIST
+DRAW
+S -200 175 200 -200 0 1 10 f
+X IN 1 -300 100 100 R 50 50 1 1 W
+X GND 2 0 -300 100 U 50 50 1 1 W
+X EN 3 -300 0 100 R 50 50 1 1 I
+X BP 4 300 0 100 L 50 50 1 1 I
+X OUT 5 300 100 100 L 50 50 1 1 w
+ENDDRAW
+ENDDEF
+#
+# modular_eside_rev10-rescue:Mounting_Hole_PAD-RESCUE-modular_eside_rev10
+#
+DEF modular_eside_rev10-rescue:Mounting_Hole_PAD-RESCUE-modular_eside_rev10 MK 0 40 N N 1 F N
+F0 "MK" 0 250 50 H V C CNN
+F1 "modular_eside_rev10-rescue:Mounting_Hole_PAD-RESCUE-modular_eside_rev10" 0 175 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Mounting?Hole*
+ Hole*
+$ENDFPLIST
+DRAW
+C 0 50 50 0 1 50 N
+X 1 1 0 -100 100 U 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+# modular_eside_rev10-rescue:PWR_FLAG-RESCUE-modular_eside_rev10
+#
+DEF modular_eside_rev10-rescue:PWR_FLAG-RESCUE-modular_eside_rev10 #FLG 0 0 N N 1 F P
+F0 "#FLG" 0 75 50 H I C CNN
+F1 "modular_eside_rev10-rescue:PWR_FLAG-RESCUE-modular_eside_rev10" 0 150 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+X pwr 1 0 0 0 U 50 50 0 0 w
+P 6 0 1 0 0 0 0 50 -40 75 0 100 40 75 0 50 N
+ENDDRAW
+ENDDEF
+#
+# modular_eside_rev10-rescue:R-RESCUE-modular_eside_rev10
+#
+DEF modular_eside_rev10-rescue:R-RESCUE-modular_eside_rev10 R 0 0 N Y 1 F N
+F0 "R" 80 0 50 V V C CNN
+F1 "modular_eside_rev10-rescue:R-RESCUE-modular_eside_rev10" 0 0 50 V V C CNN
+F2 "" -70 0 50 V I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ R_*
+ R_*
+$ENDFPLIST
+DRAW
+S -40 -100 40 100 0 1 10 N
+X ~ 1 0 150 50 D 50 50 1 1 P
+X ~ 2 0 -150 50 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# modular_eside_rev10-rescue:R_Pack04-RESCUE-modular_eside_rev10
+#
+DEF modular_eside_rev10-rescue:R_Pack04-RESCUE-modular_eside_rev10 RN 0 0 Y N 1 F N
+F0 "RN" -300 0 50 V V C CNN
+F1 "modular_eside_rev10-rescue:R_Pack04-RESCUE-modular_eside_rev10" 200 0 50 V V C CNN
+F2 "" 275 0 50 V I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ DIP*
+ SOIC*
+$ENDFPLIST
+DRAW
+S -250 -95 150 95 0 1 10 f
+S -225 75 -175 -75 0 1 10 N
+S -125 75 -75 -75 0 1 10 N
+S -25 75 25 -75 0 1 10 N
+S 75 75 125 -75 0 1 10 N
+P 2 0 1 0 -200 -100 -200 -75 N
+P 2 0 1 0 -200 75 -200 100 N
+P 2 0 1 0 -100 -100 -100 -75 N
+P 2 0 1 0 -100 75 -100 100 N
+P 2 0 1 0 0 -100 0 -75 N
+P 2 0 1 0 0 75 0 100 N
+P 2 0 1 0 100 -100 100 -75 N
+P 2 0 1 0 100 75 100 100 N
+X R1.1 1 -200 -200 100 U 50 50 1 1 P
+X R2.1 2 -100 -200 100 U 50 50 1 1 P
+X R3.1 3 0 -200 100 U 50 50 1 1 P
+X R4.1 4 100 -200 100 U 50 50 1 1 P
+X R4.2 5 100 200 100 D 50 50 1 1 P
+X R3.2 6 0 200 100 D 50 50 1 1 P
+X R2.2 7 -100 200 100 D 50 50 1 1 P
+X R1.2 8 -200 200 100 D 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# modular_eside_rev10-rescue:SW_Push-RESCUE-modular_eside_rev10
+#
+DEF modular_eside_rev10-rescue:SW_Push-RESCUE-modular_eside_rev10 SW 0 40 N N 1 F N
+F0 "SW" 50 100 50 H V L CNN
+F1 "modular_eside_rev10-rescue:SW_Push-RESCUE-modular_eside_rev10" 0 -60 50 H V C CNN
+F2 "" 0 200 50 H I C CNN
+F3 "" 0 200 50 H I C CNN
+DRAW
+C -80 0 20 0 1 0 N
+C 80 0 20 0 1 0 N
+P 2 0 1 0 0 50 0 120 N
+P 2 0 1 0 100 50 -100 50 N
+X 1 1 -200 0 100 R 50 50 0 1 P
+X 2 2 200 0 100 L 50 50 0 1 P
+ENDDRAW
+ENDDEF
+#
+# modular_eside_rev10-rescue:TP4056-RESCUE-modular_eside_rev10
+#
+DEF modular_eside_rev10-rescue:TP4056-RESCUE-modular_eside_rev10 U 0 40 Y Y 1 F N
+F0 "U" 0 300 60 H V C CNN
+F1 "modular_eside_rev10-rescue:TP4056-RESCUE-modular_eside_rev10" 0 400 60 H V C CNN
+F2 "" -50 50 60 H I C CNN
+F3 "" -50 50 60 H I C CNN
+$FPLIST
+ Housings_SOIC:SOIC-8-1EP_3.9x4.9mm_Pitch1.27mm
+$ENDFPLIST
+DRAW
+S -250 250 250 -250 0 1 0 f
+X TEMP 1 -350 150 100 R 50 50 1 1 P
+X PRG 2 -350 50 100 R 50 50 1 1 P
+X GND 3 -350 -50 100 R 50 50 1 1 P
+X VCC 4 -350 -150 100 R 50 50 1 1 P
+X BAT 5 350 -150 100 L 50 50 1 1 P
+X STDBY 6 350 -50 100 L 50 50 1 1 P
+X CHRG 7 350 50 100 L 50 50 1 1 P
+X CE 8 350 150 100 L 50 50 1 1 P
+X GND 9 0 -350 100 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# modular_eside_rev10-rescue:USB_B-RESCUE-modular_eside_rev10
+#
+DEF modular_eside_rev10-rescue:USB_B-RESCUE-modular_eside_rev10 J 0 40 Y Y 1 F N
+F0 "J" -200 450 50 H V L CNN
+F1 "modular_eside_rev10-rescue:USB_B-RESCUE-modular_eside_rev10" -200 350 50 H V L CNN
+F2 "" 150 -50 50 H I C CNN
+F3 "" 150 -50 50 H I C CNN
+$FPLIST
+ USB*
+$ENDFPLIST
+DRAW
+C -150 85 25 0 1 10 F
+C -25 135 15 0 1 10 F
+S -200 -300 200 300 0 1 10 f
+S -150 220 -100 180 0 1 0 F
+S -5 -300 5 -270 0 1 0 N
+S 10 50 -20 20 0 1 10 F
+S 200 -105 170 -95 0 1 0 N
+S 200 -5 170 5 0 1 0 N
+S 200 195 170 205 0 1 0 N
+P 2 0 1 10 -75 85 25 85 N
+P 4 0 1 10 -125 85 -100 85 -50 135 -25 135 N
+P 4 0 1 10 -100 85 -75 85 -50 35 0 35 N
+P 4 0 1 10 25 110 25 60 75 85 25 110 F
+P 7 0 1 0 -160 170 -90 170 -90 225 -105 240 -145 240 -160 225 -160 170 N
+X VBUS 1 300 200 100 L 50 50 1 1 w
+X D- 2 300 -100 100 L 50 50 1 1 P
+X D+ 3 300 0 100 L 50 50 1 1 P
+X GND 4 0 -400 100 U 50 50 1 1 w
+X Shield 5 -100 -400 100 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# modular_eside_rev10-rescue:VCC-RESCUE-modular_eside_rev10
+#
+DEF modular_eside_rev10-rescue:VCC-RESCUE-modular_eside_rev10 #PWR 0 0 Y Y 1 F P
+F0 "#PWR" 0 -150 50 H I C CNN
+F1 "modular_eside_rev10-rescue:VCC-RESCUE-modular_eside_rev10" 0 150 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+C 0 75 25 0 1 0 N
+P 2 0 1 0 0 0 0 50 N
+X VCC 1 0 0 0 U 50 50 1 1 W N
+ENDDRAW
+ENDDEF
+#
+#End Library
