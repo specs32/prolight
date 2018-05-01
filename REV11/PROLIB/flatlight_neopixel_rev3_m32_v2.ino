@@ -3,19 +3,20 @@
 // neopixel matrix, LSM6DS3 Gyro, atmega 32u4 @ internal 8MHz
 //
 //
-#include <avr/io.h>
+#include <Arduino.h>
 #include <util/delay.h>
+#include <avr/io.h>
 #include <avr/sleep.h>
 #include <avr/power.h>
 #include <avr/interrupt.h>
+#include <avr/eeprom.h>
 #include <math.h>
 #include <time.h>
-#include <avr/eeprom.h>
-
+#include <Wire.h>
 #include <WS2812.h>
 
 #include "SparkFunLSM6DS3.h" // gyro
-#include "Wire.h"
+
 
 const int REGPWR = 1;              // 3v3 POWER SUPPLY PD3
 const int MATPWR = 30;           // Matrix power supply 
@@ -33,26 +34,26 @@ const int GREEN = 12;            // Battery Indicator PinPD6
 const int PINK = 4;             // Battery Indicator PinPD4
 const int BUTTONLED = 10;             // Battery Indicator PinPB6
 
-int up_lastReading = 0;            // button read value
+int up_lastReading = HIGH;            // button read value
 long up_onTime = 0;                  // button read ontime
 long up_lastSwitchTime = 0;          // button switchtime value
 int up_hold = 0;                     // button hold value
 int up_single = 0;                   // button single press value
 
-int push_lastReading = 0;            // button read value
+int push_lastReading = HIGH;            // button read value
 long push_onTime = 0;                  // button read ontime
 long push_lastSwitchTime = 0;          // button switchtime value
 int push_hold = 0;                     // button hold value
 int push_single = 0;                   // button single press value
 
-int down_lastReading = 0;            // button read value
+int down_lastReading = HIGH;            // button read value
 long down_onTime = 0;                  // button read ontime
 long down_lastSwitchTime = 0;          // button switchtime value
 int down_hold = 0;                     // button hold value
 int down_single = 0;                   // button single press value
 
 
-int lastReading = 0;            // button read value
+int lastReading = HIGH;            // button read value
 long onTime = 0;                  // button read ontime
 long lastSwitchTime = 0;          // button switchtime value
 int hold = 0;                     // button hold value
@@ -65,7 +66,7 @@ const int doubleTime = 500;             // define button doubleclick time
 int lightState = 0;                // set lightstate value
 
 
-int xlastReading = LOW;            // button read value
+int xlastReading = HIGH;            // button read value
 int xhold = 0;                     // button hold value
 int xsingle = 0;                   // button single press value
 long xonTime = 0;                  // button read ontime
@@ -110,8 +111,6 @@ long readVcc() {
 
   return result;                      // Vcc in millivolts
 }
-
-
 
 void setup() {
 
@@ -166,7 +165,11 @@ void setup() {
 // Gyro
  myIMU.begin();
 
+
+
 }
+
+
 
 
 // start main loop 
@@ -188,7 +191,6 @@ void loop() {
 
 while(temp > 50){ // TODO: change Matrix layout for NTC... REV11 does not work, not enough thermal coupling !!
  
-
     digitalWrite(RED, 1);
     delay(50);
     digitalWrite(RED, 0);
@@ -236,6 +238,7 @@ int up_reading = digitalRead(BUTTON_UP);
 
 // 
 // do something when held                               
+//  VOLTCHECK();
 
 
       up_hold = 1;
@@ -336,6 +339,7 @@ int down_reading = digitalRead(BUTTON_DOWN);
     if ((millis() - down_onTime) > holdTime) {
 
 // do something 
+LEVELS();
 
       down_hold = 1;
     }
@@ -410,9 +414,12 @@ int xreading = digitalRead(BUTTON);
   
   if (xsingle == 1 && (millis() - xlastSwitchTime) > doubleTime) {
 
-// button single click (set brightness MATRIX)
-// do something
-   
+  // button single click (set brightness MATRIX)
+  // do something
+
+  
+
+  
   xsingle = 0;
   }
 }
@@ -441,7 +448,6 @@ void onDOWNRelease() {
 
 // do something
 //
-
       down_single = 0;
       down_lastSwitchTime = millis();
   }  
@@ -515,11 +521,10 @@ void xonRelease() {
   if ((millis() - xlastSwitchTime) < doubleTime) {
 
 //      do something
-      XLEDstate = 200;
-      analogWrite(WHITELED, XLEDstate);
-      delay(1500);
-      XLEDstate = 8;
-      analogWrite(WHITELED, XLEDstate);
+      XLEDstate = 0;
+      analogWrite(WHITELED, 200);
+      delay(2000);
+      digitalWrite(WHITELED, LOW);
       
       xsingle = 0;
       xlastSwitchTime = millis();
@@ -661,26 +666,27 @@ void blank(){
 
 void readaccel(){
   
-  int accelx = myIMU.readFloatAccelX();
-  int accely = myIMU.readFloatAccelY();
-  int accelz = myIMU.readFloatAccelZ();
+  int accelx = (myIMU.readFloatAccelX(), 4);
+  int accely = (myIMU.readFloatAccelY(), 4);
+  int accelz = (myIMU.readFloatAccelZ(), 4);
 
 }
 
 void readgyro(){
       
-  int gyrox = myIMU.readFloatGyroX();
-  int gyroy = myIMU.readFloatGyroY();
-  int gyroz = myIMU.readFloatGyroZ();
+  int gyrox = (myIMU.readFloatGyroX(), 4);
+  int gyroy = (myIMU.readFloatGyroY(), 4);
+  int gyroz = (myIMU.readFloatGyroZ(), 4);
 
 }
 
 void readtemp(){
   
-  int tempc = myIMU.readTempC();
-  int tempf = myIMU.readTempF();
+  int tempc = (myIMU.readTempC(), 4);
+  int tempf = (myIMU.readTempF(), 4);
   
 }
+
 
 void BATCHECK(){
 
@@ -787,8 +793,8 @@ void sleepNow() {
   USBCON &= ~(1 << USBE);  // Disable the USB
 */
 
-    digitalWrite (REGPWR,0);      //turn off regulator
-    digitalWrite (MATPWR,0);      //turn off matrix mosfet
+    digitalWrite (REGPWR,LOW);      //turn off regulator
+    digitalWrite (MATPWR,LOW);      //turn off matrix mosfet
     digitalWrite(WHITELED, LOW);  //turn off whiteled
 
     
@@ -802,17 +808,6 @@ void sleepNow() {
     detachInterrupt(4);      
 }
 
-/*
-TWI-Nutzung nach Power-Save
-Problem: Nach dem Aufwachen aus dem Power-Save-Mode funktioniert das I2C/TWI-Interface nicht richtig. Abhilfe: Zurücksetzen des TWI-Registers im entsprechenden Interrupt.
-
-   TWCR &= ~((1 << TWSTO) | (1 << TWEN));
-   TWCR |= (1 << TWEN);
-
-
-*/
-
-
 void wakeUpNow() {
 
   // execute code here after wake-up before returning to the loop() function
@@ -820,11 +815,119 @@ void wakeUpNow() {
   // we don't really need to execute any special functions here, since we
   // just want the thing to wake up
 
-  
-  digitalWrite(BUTTONLED, HIGH);  // enable
+  digitalWrite(BUTTONLED, HIGH);    // enable 
+  digitalWrite (REGPWR,HIGH);       //turn on regulator
+  digitalWrite (MATPWR,HIGH);       //turn on matrix mosfet
+
+
+  //TWI-Nutzung nach Power-Save
+  //Problem: Nach dem Aufwachen aus dem Power-Save-Mode funktioniert das I2C/TWI-Interface nicht richtig. Abhilfe: Zurücksetzen des TWI-Registers im entsprechenden Interrupt.
+  TWCR &= ~((1 << TWSTO) | (1 << TWEN));
+  TWCR |= (1 << TWEN);
+
+
+
 }
 
+/*
+void VOLTCHECK(){
+  blank();   
+  delay(20);
+  int  mv = readVcc();
+  u8g2.clearBuffer();  
+  u8g2.setFont(u8g2_font_logisoso16_tf);    
+  u8g2.print(mv);
+  u8g2.sendBuffer();
 
+}
+*/
+
+
+
+void LEVELS(){
+  
+  blank();
+
+  myIMU.begin();                    // init Gyro
+
+  while(true){
+      
+//  int16_t temp;
+  int16_t accelx;
+  int16_t accely;
+  int16_t accelz;
+   
+  //Acelerometer axis X
+  myIMU.readRegisterInt16(&accelx, LSM6DS3_ACC_GYRO_OUTX_L_XL);
+  
+//  Serial.print(" X = ");
+//  Serial.println(accelx);  
+  
+  //Acelerometer axis Y 
+  myIMU.readRegisterInt16(&accely, LSM6DS3_ACC_GYRO_OUTY_L_XL);
+  
+//  Serial.print(" Y = ");
+//  Serial.println(accely);
+  
+  //Acelerometer axis Z  
+  myIMU.readRegisterInt16(&accelz, LSM6DS3_ACC_GYRO_OUTZ_L_XL);
+  
+//  Serial.print(" Z = ");  
+//  Serial.println(accelz);
+
+  
+  for(uint16_t i=0; i<7 ; i++) {
+        for (uint16_t x = 0; x < 20 ; x++) {
+        
+       
+        value.b =abs(accelx/100); 
+        x++;
+        value.g = 0; 
+        x++;
+        value.r = 0;
+        x++;
+        PIXEL.set_crgb_at(i, value);      
+        }
+      }  
+
+  
+  for(uint16_t i=14; i<21 ; i++) {
+        for (uint16_t x = 0; x < 20 ; x++) {
+        
+       
+        value.b =0; 
+        x++;
+        value.g =abs(accely/100); 
+        x++;
+        value.r = 0;
+        x++;
+        PIXEL.set_crgb_at(i, value);      
+        }
+      }  
+
+  for(uint16_t i=28; i<35 ; i++) {
+        for (uint16_t x = 0; x < 20 ; x++) {
+        
+       
+        value.b = 0; 
+        x++;
+        value.g = 0; 
+        x++;
+        value.r =abs(accelz/100);
+        x++;
+        PIXEL.set_crgb_at(i, value);      
+        }
+      }  
+  PIXEL.sync();
+
+  int kitkat = digitalRead(BUTTON);
+  if (kitkat == LOW){
+    blank();
+    break;
+    }
+
+  }
+}
 
 // end of file
 
