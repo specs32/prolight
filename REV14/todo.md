@@ -5,35 +5,35 @@ Init for the ATMEGA32U4
 desired features :
 
 
-- communication via USB (bootloader)  (done !)
--- serial console (done !)
--- is it possible to show the eeprom as USB drive to upload pixelimages ??
+- communication via USB (bootloader)  (done ! / modified HOODLOADER2)
+- serial console (done !)
+- is it possible to show the eeprom as USB drive to upload pixelimages ??
 
 - battery monitoring  (done !)
 
 - powersaving modes  (done !)
--- gyro dependent sleep mode with adjustable timeout (if the lamp rests it dims after say 30 seconds and goes to powerdown after a minute)
--- lock (override) button (disables gyro dependent sleep mode)
--- powerdown mode (wakeup with external hardware interrupt (BUTTON1)) (done !)
+- gyro dependent sleep mode with adjustable timeout (if the lamp rests it dims after say 30 seconds and goes to powerdown after a minute)
+- lock (override) button (disables gyro dependent sleep mode)
+- powerdown mode (wakeup with external hardware interrupt (BUTTON1)) (done !)
 
 - spi eeprom communication (external and internal) for storage of settings images etc. (#include <EEPROM.h>)
 
 - i2c libs  #include <Wire.h>  (done !)
 
-- gyro libs  (done !)
+- gyro libs  (done ! / sparkfun lsm6)
 
 - WS2812 lib #include <WS2812.h>  (done !)
 
-- integrate oled #include <U8g2lib.h> 
+- integrate oled #include <U8g2lib.h> (sort of works)
 
-- temperatur control of the matrix (NTC) 
+- temperatur control of the matrix (NTC) (matrix is rebuild but not reordered) 
 
 - display of MIMU temperature data (IMU)  (done !)
 
-PIN RELATIONS: 
+PIN RELATIONS: (check pins_aruduino.h in modified hoodloader2)
 
 
-pin  : arduino pin : device connected
+pin  : AVR pin : device connected
 
 pin1  : PE6 : single switch / switch 1 / powerdown and wakeup / active low / INT6
 
