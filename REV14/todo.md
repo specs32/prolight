@@ -5,7 +5,7 @@ Init for the ATMEGA32U4
 desired features :
 
 
-- communication via USB (bootloader)  (done ! / modified HOODLOADER)
+- communication via USB (bootloader)  (done ! / modified HOODLOADER2)
 - serial console (done !)
 - is it possible to show the eeprom as USB drive to upload pixelimages ??
 
